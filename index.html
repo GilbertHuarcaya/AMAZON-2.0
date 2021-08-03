@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon2.0</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
@@ -15,7 +15,12 @@
       integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./script.js"></script>
+    <script src="./header.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js"
       async
@@ -123,6 +128,7 @@
           </svg>
         </div>
         <!--Right ICONS-->
+        <!--Right ICONS-->
         <div
           class="icons flex items-center ml-auto mr-8 w-48 h-16 justify-around"
         >
@@ -140,7 +146,6 @@
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             />
           </svg>
-          <!-- Cart Icon-->
           <a href="cart.html">
             <div
               class="
@@ -157,7 +162,7 @@
             >
               <div
                 class="
-                  cart-number
+                  cart-item-number
                   absolute
                   -top-1
                   -right-1
@@ -171,7 +176,6 @@
                   text-gray-800 text-xs
                 "
               >
-                1
               </div>
               <svg
                 class="h-4 w-4 text-gray-600"
@@ -207,7 +211,7 @@
         </div>
       </div>
 
-      <div class="main h-full md:h-screen flex">
+      <div class="main h-full flex">
         <div
           class="
             main-sidebar
@@ -367,7 +371,7 @@
                 />
               </svg>
             </h1>
-            <div class="categories mt-5 flex flex-wrap">
+            <div class="categories flex flex-wrap">
               <div
                 class="
                   icon-desktop
@@ -378,6 +382,7 @@
                   flex
                   items-center
                   justify-center
+                  mr-6 mt-5
                 "
               >
                 <svg
@@ -405,7 +410,8 @@
                   flex
                   items-center
                   justify-center
-                  ml-6
+                  mr-6
+                  mt-5
                 "
               >
                 <svg
@@ -433,7 +439,8 @@
                   flex
                   items-center
                   justify-center
-                  ml-6
+                  mr-6
+                  mt-5
                 "
               >
                 <svg
@@ -461,7 +468,8 @@
                   flex
                   items-center
                   justify-center
-                  ml-6
+                  mr-6
+                  mt-5
                 "
               >
                 <svg
@@ -489,7 +497,8 @@
                   flex
                   items-center
                   justify-center
-                  ml-6
+                  mr-6
+                  mt-5
                 "
               >
                 <svg
@@ -523,7 +532,8 @@
                   flex
                   items-center
                   justify-center
-                  ml-6
+                  mr-6
+                  mt-5
                 "
               >
                 <svg
@@ -551,7 +561,8 @@
                   flex
                   items-center
                   justify-center
-                  ml-6
+                  mr-6
+                  mt-5
                 "
               >
                 <svg
@@ -579,7 +590,8 @@
                   flex
                   items-center
                   justify-center
-                  ml-6
+                  mr-6
+                  mt-5
                 "
               >
                 <svg
@@ -603,90 +615,6 @@
           <div class="main-section-deals mt-5">
             <h1 class="text-2xl font-bold text-gray-700 mb-5">Hot Deals 🔥</h1>
             <div class="main-section-products flex flex-wrap">
-              <div class="main-product">
-                <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
-                  <img
-                    class="w-full h-full object-contain"
-                    src="https://m.media-amazon.com/images/I/61-PblYntsL._AC_SL1500_.jpg"
-                    alt="Nintendo switch"
-                  />
-                </div>
-                <div class="product-name text-gray-700 font-bold">
-                  Nintendo Switch (2019)
-                </div>
-                <div class="product-make text-green-700 font-bold">
-                  Nintendo
-                </div>
-                <div class="product-rating text-yellow-300 font-bold my-1">
-                  ⭐⭐⭐⭐⭐ 4.5
-                </div>
-                <div class="product-price text-gray-700 font-bold text-lg">
-                  $290.00
-                </div>
-              </div>
-              <div class="main-product-2 ml-5">
-                <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
-                  <img
-                    class="w-full h-full object-contain"
-                    src="https://m.media-amazon.com/images/I/61-PblYntsL._AC_SL1500_.jpg"
-                    alt="Nintendo switch"
-                  />
-                </div>
-                <div class="product-name text-gray-700 font-bold">
-                  Nintendo Switch (2019)
-                </div>
-                <div class="product-make text-green-700 font-bold">
-                  Nintendo
-                </div>
-                <div class="product-rating text-yellow-300 font-bold my-1">
-                  ⭐⭐⭐⭐⭐ 4.5
-                </div>
-                <div class="product-price text-gray-700 font-bold text-lg">
-                  $290.00
-                </div>
-              </div>
-              <div class="main-product-2 ml-5">
-                <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
-                  <img
-                    class="w-full h-full object-contain"
-                    src="https://m.media-amazon.com/images/I/61-PblYntsL._AC_SL1500_.jpg"
-                    alt="Nintendo switch"
-                  />
-                </div>
-                <div class="product-name text-gray-700 font-bold">
-                  Nintendo Switch (2019)
-                </div>
-                <div class="product-make text-green-700 font-bold">
-                  Nintendo
-                </div>
-                <div class="product-rating text-yellow-300 font-bold my-1">
-                  ⭐⭐⭐⭐⭐ 4.5
-                </div>
-                <div class="product-price text-gray-700 font-bold text-lg">
-                  $290.00
-                </div>
-              </div>
-              <div class="main-product-2 ml-5">
-                <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
-                  <img
-                    class="w-full h-full object-contain"
-                    src="https://m.media-amazon.com/images/I/61-PblYntsL._AC_SL1500_.jpg"
-                    alt="Nintendo switch"
-                  />
-                </div>
-                <div class="product-name text-gray-700 font-bold">
-                  Nintendo Switch (2019)
-                </div>
-                <div class="product-make text-green-700 font-bold">
-                  Nintendo
-                </div>
-                <div class="product-rating text-yellow-300 font-bold my-1">
-                  ⭐⭐⭐⭐⭐ 4.5
-                </div>
-                <div class="product-price text-gray-700 font-bold text-lg">
-                  $290.00
-                </div>
-              </div>
             </div>
           </div>
         </div>
