@@ -45,7 +45,7 @@
           text-white
         "
       >
-        <div class="logo w-1/5 h-16 ml-10">
+        <div class="logo w-1/5 h-16 ml-4 md:ml-10">
           <a href="index.html">
             <img
               class="w-28 h-16 object-contain"
@@ -63,7 +63,8 @@
             border border-gray-500 border-opacity-75
             rounded-l-xl
             px-3
-            ml-6
+            ml-3
+            md:ml-6
             focus:outline-none
             placeholder-white
           "
@@ -73,9 +74,11 @@
         />
         <div
           class="
+            cursor-pointer
+            hover:bg-gray-700
             categories
             h-9
-            w-30
+            w-grow
             bg-gray-800
             border border-gray-500 border-opacity-75
             px-3
@@ -83,10 +86,10 @@
             items-center
           "
         >
-          categories
+          <h4 class="categories hidden md:block mr-2">categories</h4>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 ml-2"
+            class="h-4 w-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -101,7 +104,9 @@
         </div>
         <div
           class="
+            cursor-pointer hover:bg-yellow-600 
             search-icon
+            mr-1
             bg-yellow-500
             h-9
             w-10
@@ -128,10 +133,10 @@
         </div>
         <!--Right ICONS-->
         <div
-          class="icons flex items-center ml-auto mr-8 w-48 h-16 justify-around"
+          class="  icons flex items-center ml-auto mr-4 md:mr-10 w-grow h-16 justify-around"
         >
           <svg
-            class="h-4 w-4"
+            class=" mr-4 cursor-pointer hover:text-yellow-600 hidden md:block h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -156,6 +161,8 @@
                 justify-center
                 rounded-xl
                 relative
+                cursor-pointer
+                hover:bg-yellow-600
               "
             >
               <div
@@ -175,7 +182,7 @@
                 "
               ></div>
               <svg
-                class="h-4 w-4 text-gray-600"
+                class=" h-4 w-4 text-gray-600"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -192,7 +199,7 @@
           </a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
+            class="ml-4 cursor-pointer hover:text-yellow-600 hidden md:block  h-4 w-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -204,11 +211,11 @@
               d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
             />
           </svg>
-          <svg class="rounded h-12 w-12" data-jdenticon-value="Gilbert"></svg>
+          <svg class="ml-2 md:ml-4 rounded h-12 w-12" data-jdenticon-value="Gilbert"></svg>
         </div>
       </div>
 
-      <div class="main h-full flex">
+      <div class="main h-screen flex">
         <div
           class="
             hidden md:block
@@ -330,28 +337,11 @@
         </div>
         <div class="main-section flex-1 p-6 bg-white">
           <h1 class="font-bold text-gray-400 text-3xl mb-6">Shopping Cart</h1>
-          <div
-            class="
-              font-bold
-              table-titles
-              flex
-              text-gray-400
-              items-center
-              justify-center
-              flex-wrap
-            "
-          >
-            <h2 class="flex-grow">Product</h2>
-            <h2 class="w-48">Count</h2>
-            <h2 class="w-48">Total Cost</h2>
-            <span class="w-10"></span>
-          </div>
           <div class="cart-items mt-5"></div>
-          <div class="complete-order flex justify-end mt-10">
+          <div class="complete-order flex flex-wrap justify-end mt-10">
             <div class="total-cost mr-7">
               <h2 class="text-gray-400">Total Cost</h2>
               <div class="total-cost-number font-bold text-3xl text-gray-600">
-
               </div>
             </div>
             <div
@@ -359,6 +349,7 @@
                 complete-order-button
                 flex
                 w-56
+                h-12
                 flex
                 justify-center
                 items-center
